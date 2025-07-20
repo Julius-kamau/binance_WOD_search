@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="binanceTextHolder" contenteditable="true">
+    long_Click_and_paste_the_BINANCE_TEXT_here
+  </div>
+  <br />
+
+  <center><h4><u>:Tryout the following:</u></h4></center>
+  <div id="currListHolder">
+    <b>POSSIBLE WORD</b>
+    YOU'RE LOOKING FOR APPEAR HERE
+  </div>
+  <br />
+  
+  <center>
+  <input type="number" id="charLen" placeholder="How many lett
+  ers does the word have"/>
+  <button onclick="filterByLen()">filter</button>
+  <br/>
+  
+  <input type="text" id="clueChar" placeholder="Character whose index you know"/>
+  <input type="number" id="clueCharIndex" placeholder="index of the character"/>
+  <button id="cluebtn" onclick="filterByClue()" disabled>filter By HINT Character</button>
+  <br/><br/>
+
+  <input type="text" id="clueCharsInput" placeholder="Characters you know are in the word"/>
+  <button id="multiCluebtn" onclick="filterByMultiClue()" disabled>filter by multiple HINT characters</button>
+  
+  <script src="main.js"></script>
+</body>
+</html> 

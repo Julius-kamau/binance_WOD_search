@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-weight: lighter;
+    font-family: monospace;
+    padding: 0px;
+    background: black;
+    color: gold;
+    justify-content: center; 
+}
+div {
+    background: black;
+    border-radius: 5px;
+    padding: 5px;
+    justify-self: center;
+}
+input{
+    background-color: rgb(24, 24, 24);
+    color: ghostwhite;
+    font-weight: bold;
+    display: block;
+    border: 1px solid rgb(249, 230, 120);
+    border-radius: 5px;
+    overflow-x: auto;
+    transition: .7s ease-in-out;
+}
+input:hover {
+    width: 55vw;
+}
+::placeholder {
+    font-weight: lighter;
+    font-family: monospace;
+}
+button {
+    background: goldenrod;
+    box-shadow: none;
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: whitesmoke;
+    display: block;
+    transition: .5s ease-in-out;
+}
+button:hover {
+    background-color: rgb(255, 216, 58);
+}
+#currListHolder {
+    max-width: 96vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    padding: 4vw;
+    font-style: oblique;
+    font-weight: bolder;
+    font-size: 1.3em;
+    margin: 15px;
+    box-shadow: 0px 0px 5px rgba(123, 96, 0, 0.781);
+}
+#binanceTextHolder {
+    font-family: sans-serif;
+    font-size: smaller;
+    color: antiquewhite;
+    max-height: 20vh;
+    overflow-y: auto;
+    border: 1px solid gold;
+}
