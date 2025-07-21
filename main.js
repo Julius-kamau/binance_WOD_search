@@ -73,7 +73,7 @@ function filterByMultiClue() {
       if (word.includes(clueChars[j])) {
         currListCopy.push(word);
         counter++;
-        break;  // Avoid pushing the same word multiple times
+        break;
       }
     }
   }
