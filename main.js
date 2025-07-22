@@ -12,7 +12,7 @@ function filterByLen() {
   let binancetext = String(binanceTextHolder.innerText || "").split(/[\s,.]+/);
   let charlen = parseInt(charLenInput.value);
   let counter = 0;
-  let currList = [];
+  currList = [];
 
   for (let i = 0; i < binancetext.length; i++) {
     const word = binancetext[i];
@@ -37,7 +37,7 @@ function filterByClue() {
   let clueChar = clueCharInput.value;
   let clueCharIndex = parseInt(clueCharIndexInput.value) - 1;
   let counter = 0;
-  let currListCopy = [];
+  currListCopy = [];
 
   alert("True clue character index is " + clueCharIndex + " and clue character is " + clueChar);
 
@@ -65,7 +65,7 @@ function filterByClue() {
 function filterByMultiClue() {
   let clueChars = clueCharsInput.value;
   let counter = 0;
-  let currListCopy = [];
+  currListCopy = [];
 
   for (let i = 0; i < currList.length; i++) {
     let word = currList[i];
