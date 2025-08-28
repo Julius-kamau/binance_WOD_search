@@ -39,9 +39,18 @@
   <br/><br/>
 
   <input type="text" id="clueCharsInput" placeholder="Characters you know are in the word"/>
-  <button id="multiCluebtn" onclick="filterByMultiClue()" disabled>filter by multiple HINT characters</button>
+  <button id="multiCluebtn" onclick="filterByCosecutiveClue()" disabled>filter by CONSECUTIVE HINT characters</button>
+  <br/><br/>
+
+  <input type="text" id="multiCLueCharA" placeholder="one characteer you know is in the word"/>
+  <input type="text" id="multiCLueCharB" placeholder="Another Character you know is in the word"/>
+  <input type="text" id="multiCLueCharC" placeholder="Another Character you know is in the word"/>
+  <p><i>tip: </i>if you only know <u>one</u> you can leave the rest of the fields empty</p>
+  <button onclick="filterByMultiClue()">filter by multiple Clue chars</button>
+  <a href="https://www.binance.com/activity/word-of-the-day/G1164845617013133312/shared?shareParam=eyJhY3Rpdml0eUlkIjoiRzExNjQ4NDU2MTcwMTMxMzMzMTIiLCJuZXdzSWQiOjExNDIxNzIwNzc3Nzg3NTgyMDMsInJvdW5kIjoyLCJ1c2VyS2V5IjoiV1UxMTY2NzE4NDExOTkyNzk3MTg0In0%3D&utm_medium=web_share_copy">paste link here</a>
+
   </center>
   
   <script src="main.js"></script>
 </body>
-</html> 
+</html>
