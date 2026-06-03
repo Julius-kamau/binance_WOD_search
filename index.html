@@ -42,15 +42,22 @@
   <button id="multiCluebtn" onclick="filterByCosecutiveClue()" disabled>filter by CONSECUTIVE HINT characters</button>
   <br/><br/>
 
-  <input type="text" id="multiCLueCharA" placeholder="one characteer you know is in the word"/>
-  <input type="text" id="multiCLueCharB" placeholder="Another Character you know is in the word"/>
-  <input type="text" id="multiCLueCharC" placeholder="Another Character you know is in the word"/>
-  <p><i>tip: </i>if you only know <u>one</u> you can leave the rest of the fields empty</p>
-  <button onclick="filterByMultiClue()">filter by multiple Clue chars</button>
-  <a href="https://www.binance.com/activity/word-of-the-day/G1172450265208320000/shared?shareParam=eyJhY3Rpdml0eUlkIjoiRzExNzI0NTAyNjUyMDgzMjAwMDAiLCJuZXdzSWQiOjI2OTY5MTc0NjAwOTI2ODQzOTUsInJvdW5kIjo1LCJ1c2VyS2V5IjoiV1UxMTc0NzU1NDg5ODg4ODIxMjQ5In0%3D&utm_medium=web_share_copy">paste link here</a>
+  <input type="text" id="multiCLueCharA" placeholder="Characters you know are in the word"/>
+  <span><i>tip: </i>if you only know <u>one</u> you can leave the rest of the fields empty</span>
+  <button onclick="filterByMultiClue()">filter by multiple Clue char
+  </button>
+  <br/><br/>
+  
+  <input type="text" id="nonClueCharsInput" placeholder="Characters that AREN'T in The Word">
+  <button onclick="filterByNonChars()">Filter By Non Characters</button>
+  
+  <a href="https://www.binance.com/activity/word-of-the-day/binance-pizzaday?ref=CPA_00XXLUN1RI">paste link here</a>
 
   </center>
   
+  <input type="text" id="myText" onblur = "checkWord();">
+  <p id="output"></p>
+  
   <script src="main.js"></script>
 </body>
-</html>ygb. 
+</html>

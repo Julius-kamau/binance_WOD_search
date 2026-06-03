@@ -6,7 +6,8 @@ const clueCharIndexInput = document.getElementById('clueCharIndex');
 const clueCharsInput = document.getElementById('clueCharsInput');
 const clueCharsInputA = document.getElementById('multiCLueCharA');
 const clueCharsInputB = document.getElementById('multiCLueCharB');
-const clueCharsInputC = document.getElementById('multiCLueCharC');
+const clueCharsInputC = document.getElementById('multiClueCharC');
+const nonClueCharsInput = document.getElementById('nonClueCharsInput');
 let currList = [];
 let currListCopy = [];
 
@@ -16,19 +17,13 @@ function filterByLen() {
   let charlen = parseInt(charLenInput.value);
   let counter = 0;
   currList = [];
-  
   for (let i = 0; i < binancetext.length; i++) {
     const word = binancetext[i];
-    if (
-      word.length === charlen //||
-      /*word.length === charlen + 1 ||
-      word.length === charlen - 1*/
-    ) {
-      counter++;
+    if (word.length === charlen && !currList.includes(word)) {
       currList.push(word);
+      counter++;
     }
   }
-  
   alert("Done. Found Words: " + counter);
   currListHolder.innerText = currList.join(", ");
   document.getElementById("cluebtn").removeAttribute("disabled");
@@ -51,7 +46,6 @@ function filterByClue() {
       counter++;
     }
   }
-  
   if (counter === 0) {
     alert("No words found.");
     currListHolder.innerText = currList.join(", ");
@@ -59,6 +53,7 @@ function filterByClue() {
     currListHolder.innerText = currListCopy.join(", ");
   }
 }
+
 
 function filterByCosecutiveClue() {
   let clueChars = clueCharsInput.value;
@@ -72,7 +67,6 @@ function filterByCosecutiveClue() {
       counter++;
     }
   }
-  
   if (counter === 0) {
     alert("No words found.");
     currListHolder.innerText = currList.join(", ");
@@ -83,25 +77,44 @@ function filterByCosecutiveClue() {
 
 
 function filterByMultiClue() {
-  currListCopy = [];
-  let clueCharsA = clueCharsInputA.value;
-  let clueCharsB = clueCharsInputB.value;
-  let clueCharsC = clueCharsInputC.value;
-  let counter = 0;
-  //alert(clueCharsA + clueCharsB + clueCharsC);
-  
+  const clueCharsA = clueCharsInputA.value.split("");
+  const currListCopy = [];
   for (let i = 0; i < currList.length; i++) {
-    if (currList[i].includes(clueCharsA) && currList[i].includes(clueCharsB) && currList[i].includes(clueCharsC)) {
-      currListCopy.push(currList[i]);
-      counter++;
+    const word = currList[i];
+    let matchesAll = true;
+    for (let c of clueCharsA) {
+      if (!word.includes(c)) {
+        matchesAll = false;
+        break;
+      }
+    }
+    if (matchesAll) currListCopy.push(word);
+  }
+  currListHolder.innerText = currListCopy.length ?
+    currListCopy.join(", ") :
+    "No words found.";
+}
+
+
+function filterByNonChars(){
+  let nonClueChars = nonClueCharsInput.value.split("");
+  for (let i = 0; i < nonClueChars.length; i++) {
+    let currNonChar = nonClueChars[i];
+    for (let j = currList.length-1; j >= 0; j--) {
+      if (currList[j].includes(currNonChar)) {
+        currList.splice(j, 1);
+      }
     }
   }
-  
-  
-  if (counter === 0) {
-    alert("No words found.");
-    currListHolder.innerText = currList.join(", ");
-  } else {
-    currListHolder.innerText = currListCopy.join(", ");
-  }
+  currListHolder.innerText = currList.join(", ");
 }
+/*https://www.binance.com/en/activity/word-of-the-day/binancechat?utm_source=muses*/
+function checkWord() {
+  let str = document.getElementById('myText').value;
+  let output= document.getElementById('output');
+  //let substring = "bn-flex";
+  let myStr = str.replace(/bn-flex/g, "--------------IT WAS HERE----------------");
+  output.innerText = myStr;
+}
+
+//window.getComputedStyle(document.getElementsByName( "bn-flex")[3]);
