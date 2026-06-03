@@ -96,19 +96,27 @@ function filterByMultiClue() {
 }
 
 
-function filterByNonChars(){
-  let nonClueChars = nonClueCharsInput.value.split("");
+function filterByNonChars() {
+  let nonClueChars = nonClueCharsInput.value.toLowerCase().split("");
+
   for (let i = 0; i < nonClueChars.length; i++) {
     let currNonChar = nonClueChars[i];
-    for (let j = currList.length-1; j >= 0; j--) {
-      if (currList[j].includes(currNonChar)) {
+
+    for (let j = currList.length - 1; j >= 0; j--) {
+      if (currList[j].toLowerCase().includes(currNonChar)) {
         currList.splice(j, 1);
       }
     }
   }
+
   currListHolder.innerText = currList.join(", ");
 }
-/*https://www.binance.com/en/activity/word-of-the-day/binancechat?utm_source=muses*/
+
+
+
+//JUNK----
+
+/*https://www.binance.com/en/activity/word-of-the-day/binancechat?utm_source=muses
 function checkWord() {
   let str = document.getElementById('myText').value;
   let output= document.getElementById('output');
@@ -118,3 +126,5 @@ function checkWord() {
 }
 
 //window.getComputedStyle(document.getElementsByName( "bn-flex")[3]);
+
+*/
